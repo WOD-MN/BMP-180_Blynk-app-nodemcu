@@ -8,8 +8,8 @@
 #include <Adafruit_BMP085.h>
 
 Adafruit_BMP085 bmp;
-#define I2C_SCL 12
-#define I2C_SDA 13
+#define I2C_SCL 13
+#define I2C_SDA 12
 
 float dst,bt,bp,ba;
 char dstmp[20],btmp[20],bprs[20],balt[20];
@@ -45,7 +45,7 @@ Blynk.virtualWrite(V13, dst);
 
 void setup()
 {
-  Serial.begin(9600);
+  Serial.begin(115200);
   Blynk.begin(auth, ssid, pass);
   Wire.begin(I2C_SDA, I2C_SCL);
   delay(10);
